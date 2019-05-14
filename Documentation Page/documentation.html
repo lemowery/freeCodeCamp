@@ -1,0 +1,70 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<link rel = "stylesheet" href = "documentation.css">
+<nav id = "navbar">
+  <header>MyFacebook Documentation</header>
+  <ul>
+    <a class = "nav-link" href = "#Introduction"><li>Introduction</li></a>
+    <a class = "nav-link" href = "#Start_Up"><li>Start Up</li></a>
+    <a class = "nav-link" href = "#Adding_Friends"><li>Adding Friends</li></a>
+    <a class = "nav-link" href = "#Adding/Modifying_Lists"><li>Adding/Modifying Lists</li></a>
+    <a class = "nav-link" href = "#Posting_Pictures"><li>Posting Pictures</li></a>
+  </ul>
+</nav>
+
+<main id = "main-doc">
+  <section class = "main-section" id = "Introduction">
+    <header class = "section-header">Introduction</header>
+    <p>MyFacebook is a Java program meant to simulate a social media website. The goal of this program is to give a basic understanding of how permissions work with respect to access control found in operating systems. Users can create their profile, add friends, add lists, post pictures, and comment/view those pictures. However, owners of the profile and pictures can modify the permissions of those who can read/modify them. The program is executed from the terminal using the following form:</p>
+    <code>java access filename.txt</code>
+    <p>Where filename.txt is a text file from which the commands are executed.</p>
+  </section>
+  <section class = "main-section" id = "Start_Up">
+    <header class = "section-header">Start Up</header>  
+    <p>In order to start up the program:</p>
+    <ul>
+      <li>A profile owner must be created.</li>
+      <li>This owner must be the active user.</li>
+    </ul>
+    <p>Otherwise, the program will terminate.</p>
+    <p>To accomplish this, the friendadd and viewby commands are used:</p>
+    <code>friendadd friendname<br>
+          viewby friendname</code>
+    <p>The program must begin with these two commands. Friendadd will add the given friendname to the friends.txt file. This file keeps a list of friends. When executed in the beginning of the program, the first added friend becomes the profile owner. The viewby command then sets the active user to the given friendname. In the beginning, this must be the profile owner.</p>
+  </section>
+  <section class = "main-section" id = "Adding_Friends">
+    <header class = "section-header">Adding Friends</header>
+    <p>Once you have correctly created and activated the user, you may begin using additional commands. You may now use the friendadd command to add new friendnames to the friends.txt file. These friends will then be able to become active users and can preform the following actions given they have the correct permissions:</p>
+    <code>viewby friendname<br>
+          postpicture picturename.txt<br>
+          writecomments picturename.txt text<br>
+          readcomments picturename.txt
+    </code>
+  </section>
+  <section class = "main-section" id = "Adding/Modifying_Lists">
+    <header class = "section-header">Adding/Modifying Lists</header>
+    <p>The profile owner, however, has additional commands. He or she can also create lists to which friends and photo can then be added. This is included so that the members of these lists can be given certain permissions</p>
+    <code>listadd listname<br>
+          friendlist friendname listname
+    </code>
+    <p>Listadd is used to create a list with the given listname, while friendlist adds the friendname to the listname, given that both are valid parameters. These command can only be executed if:</p>
+    <ul>
+      <li>The current user is the profile owner.</li>
+      <li>The friendname is a friend in the friends.txt file.</li>
+      <li>The listname is a list in the in-memory list map.</li>
+    </ul>
+  </section>
+  <section class = "main-section" id = "Posting_Pictures">
+    <header class = "section-header">Posting Pictures</header>
+    <p>To post a picture is to create a text file to represent the picture. The text file will then contain the name of the picture, as well as the comments on the picture. The picture will be created with no list associated, the owner will be the current user, and the permissions will be set to rw -- --. In order to post a picture, however:</p>
+    <ul>
+      <li>The current user must have permissions to post a picture.</li>
+      <li>A picture with the same name must not exist.</li>
+    </ul>
+    <p>The user can then change the permissions of a picture using:</p>
+    <code>chlst picturename.txt listname<br>
+          chmod picturename.txt -- -- --<br>
+          chown picturename.txt ownername<br>
+    </code>
+    <p>Only the profile owner or the picture owner can issue these commands. Chlst modifies the list associated with the picture, chmod modifies the permissions, and chown changes the owner of the picture.</p>
+  </section>
+</main>

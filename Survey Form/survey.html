@@ -1,0 +1,45 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<link rel = "stylesheet" href = "survey.css">
+<h1 id = "title">Fly Fishing Club Registration
+  <p id = "description">Welcome to the Fly Fishing Club registration survey!</p>
+</h1>
+
+<form id = "survey-form">
+  <label for = "name" id = "name-label">*Name: </label>
+  <input type = "text" placeholder = "Full Name" id  = "name" name = "name" required><br>
+  <label for = "email" id = "email-label">*Email: </label>
+  <input type = "email" placeholder = "myemail@domain.com" id  = "email" name = "email" required><br>
+  <label for = "number" id = "number-label">Years of Experience: </label>
+  <input type = "number" placeholder = "Years" id = "number" name = "experience" required min = "0" max = "50"><br>
+  <label for = "dropdown" id = "class-label">Year in School: </label>
+  <select id = "dropdown">
+    <option value = "Freshman">Freshman</option>
+    <option value = "Sophomore">Sophomore</option>
+    <option value = "Junior">Junior</option>
+    <option value = "Senior">Senior</option>
+    <option value = "Graduate">Graduate</option>
+  </select>
+  <p>How did you hear about us?</p>
+  <input id = "club-event" type = "radio" name = "how-heard" value = "club-event">
+  <label for  = "club-event">Club Event</label>
+  <input id = "club-email" type = "radio" name = "how-heard" value = "club-email">
+  <label for  = "club-email">Club Email</label>
+  <input id = "friend-referral" type = "radio" name = "how-heard" value = "friend-referral">
+  <label for  = "friend-referral">Friend Referral</label>
+  <input id = "flyer" type = "radio" name = "how-heard" value = "flyer">
+  <label for  = "flyer">Flyer</label>
+  <p>What do you hope to gain from club membership?</p>
+  <input id = "cast-techniques" type = "checkbox" name = "desire" value = "Casting Techniques">
+  <label for  = "cast-techniques">Casting Techniques</label>
+  <input id = "locations" type = "checkbox" name = "desire" value = "Locations">
+  <label for  = "locations">Fishing Locations</label>
+  <input id = "buddies" type = "checkbox" name = "desire" value = "Buddies">
+  <label for  = "buddies">Fishing Buddies</label>
+  <input id = "other" type = "checkbox" name = "desire" value = "Other">
+  <label for  = "other">Other</label>
+  <p>Please let us know more about you!</p>
+  <textarea id = "more-info" name = "more-information" rows = "5" cols = "20">
+  More about you!
+  </textarea><br>
+  <button type = "submit" id = "submit">Submit</button>
+</form>
